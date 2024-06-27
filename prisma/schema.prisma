@@ -8,18 +8,7 @@ datasource db {
 }
 
 model Fatura {
-    id            String @id @default(cuid())
-    numeroCliente String
-    mesReferencia String
-
-    energiaEletrica   Json
-    energiaScee       Json
-    energiaCompensada Json
-
-    contribilum Float
-
-    faturaURL String?
-
-    createdAt DateTime  @default(now())
-    updatedAt DateTime?
+    id           Int    @id @default(autoincrement())
+    clientNumber String
+    pdfPath      String
 }
