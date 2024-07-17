@@ -8,7 +8,18 @@ datasource db {
 }
 
 model Fatura {
-    id           Int    @id @default(autoincrement())
-    clientNumber String
-    pdfPath      String
+    id String @id @default(uuid())
+
+    numeroCliente      String
+    mesReferencia      String
+    energiaEletrica    Json
+    energiaSceee       Json
+    energiaCompensada  Json
+    contribIlumPublica Float
+
+    urlFatura  String?
+    nomeFatura String?
+
+    createdAt DateTime  @default(now())
+    updatedAt DateTime?
 }
